@@ -116,9 +116,9 @@ class CupertinoSettingsSection extends StatelessWidget {
     return Padding(
       padding: largeScreen
           ? EdgeInsets.only(
-              top: header == null ? 35.0 : 22.0, left: 22, right: 22)
+              top: header == null ? 0.0 : 22.0, left: 22, right: 22)
           : EdgeInsets.only(
-              top: header == null ? 35.0 : 22.0,
+              top: header == null ? 0.0 : 22.0,
             ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

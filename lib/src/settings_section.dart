@@ -55,26 +55,28 @@ class SettingsSection extends AbstractSection {
   Widget iosSection() {
     return CupertinoSettingsSection(
       tiles!,
-      header: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (title != null || titleWidget != null)
-            titleWidget ??
-                Text(
-                  title!,
-                  style: titleTextStyle,
-                  maxLines: maxLines,
-                  overflow: TextOverflow.ellipsis,
-                ),
-          if (subtitle != null)
-            Padding(
-              padding: subtitlePadding,
-              child: subtitle,
+      header: (title == null) && (titleWidget == null)
+          ? null
+          : Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (title != null || titleWidget != null)
+                  titleWidget ??
+                      Text(
+                        title!,
+                        style: titleTextStyle,
+                        maxLines: maxLines,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                if (subtitle != null)
+                  Padding(
+                    padding: subtitlePadding,
+                    child: subtitle,
+                  ),
+              ],
             ),
-        ],
-      ),
       headerPadding: titlePadding!,
     );
   }
